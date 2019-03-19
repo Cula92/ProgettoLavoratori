@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> 
@@ -26,7 +27,6 @@
 
 <div class="wrapper fadeInDown">
   <div id="formContent">
-  <div class="container center_div">
    	 <br>
 	      <!-- Icon <img class="fadeIn first" src="icon.gif" id="icon" alt="User Icon" width="20px" height="20px" /> -->	 
 			
@@ -45,13 +45,9 @@
     <!-- Footer -->
     
         <div id="formFooter">
-        <c:if test="${errorLogin eq 'si'}">
-      		<a class="underlineHover" href="#">Username o Password dimenticati?</a>
-    	</c:if>
-    	    Non sei registrato? <a class="underlineHover" href="Signin.jsp">Registrati</a>
+        	Non sei un utente registrato? <a class="underlineHover" href="#">Registrati</a>
     	</div>
 	
-	</div>
   </div>
 </div>
 </head>
