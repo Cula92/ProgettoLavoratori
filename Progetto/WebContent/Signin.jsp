@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> 
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -31,7 +31,7 @@
 	      <!-- Icon <img class="fadeIn first" src="icon.gif" id="icon" alt="User Icon" width="20px" height="20px" /> -->	 
 			
     <!-- Login Form -->
-    <p>Benvenuto alla pagina di login</p>
+    <p>REGISTRATI</p>
     <c:if test="${errorLogin eq 'si'}">
     <b style="color:red;"> Errore: credenziali errate</b>
     <br>
@@ -42,15 +42,6 @@
       <input type="submit" class="fadeIn fourth" style="margin:20px 20px 20px 20px;" value="Login">
     </form>
 
-    <!-- Footer -->
-    
-        <div id="formFooter">
-        <c:if test="${errorLogin eq 'si'}">
-      		<a class="underlineHover" href="#">Username o Password dimenticati?</a>
-    	</c:if>
-    	    Non sei registrato? <a class="underlineHover" href="Signin.jsp">Registrati</a>
-    	</div>
-	
 	</div>
   </div>
 </div>

@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
- 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %> 
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -13,7 +11,7 @@
 <link rel="stylesheet" href="css/LoginStyle.css">
 
 <head>
-	<title>Login</title>
+	<title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,30 +26,16 @@
   <div id="formContent">
   <div class="container center_div">
    	 <br>
-	      <!-- Icon <img class="fadeIn first" src="icon.gif" id="icon" alt="User Icon" width="20px" height="20px" /> -->	 
 			
-    <!-- Login Form -->
-    <p>Benvenuto alla pagina di login</p>
-    <c:if test="${errorLogin eq 'si'}">
-    <b style="color:red;"> Errore: credenziali errate</b>
-    <br>
-    </c:if>
-	<form id="frmRegLog" name="frmRegLog" method="post" action="LoginServlet">					 		
-      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
-      <input type="submit" class="fadeIn fourth" style="margin:20px 20px 20px 20px;" value="Login">
+    <p>Home</p>
+	<form id="frmRegLog" name="frmRegLog">			
+	<!-- Icon <img class="fadeIn first" src="icon.gif" id="icon" alt="User Icon" width="20px" height="20px" /> -->	  		
+  	  <input type="button" class="fadeIn fourth" onclick="window.location.href='Login.jsp'" style="margin:20px 20px 20px 20px;" value="Login">
+      <input type="button" class="fadeIn fourth" onclick="window.location.href='Signin.jsp'" style="margin:20px 20px 20px 20px;" value="Registrati">
+      
     </form>
 
-    <!-- Footer -->
-    
-        <div id="formFooter">
-        <c:if test="${errorLogin eq 'si'}">
-      		<a class="underlineHover" href="#">Username o Password dimenticati?</a>
-    	</c:if>
-    	    Non sei registrato? <a class="underlineHover" href="Signin.jsp">Registrati</a>
-    	</div>
-	
-	</div>
+  </div>
   </div>
 </div>
 </head>
