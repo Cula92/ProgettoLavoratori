@@ -1,4 +1,4 @@
-package classes.copy;
+package classes;
 
 public class MyConnection {
 
