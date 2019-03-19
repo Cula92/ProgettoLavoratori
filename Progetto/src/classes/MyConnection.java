@@ -1,6 +1,5 @@
 package classes;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -50,7 +49,7 @@ public class MyConnection {
 		// apre connessione al DB
 		openConnection();
 		
-		// ResultSet è un'interfaccia
+		// ResultSet ï¿½ un'interfaccia
 		try 
 		{
 			rs = st.executeQuery(sql);	

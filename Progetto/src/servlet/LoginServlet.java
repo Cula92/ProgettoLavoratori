@@ -25,11 +25,11 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String usernameAdmin = request.getParameter("username");
-		String passAdmin = request.getParameter("password");
-		System.out.println(usernameAdmin + " pass:" + passAdmin);
+		String username = request.getParameter("username");
+		String pass = request.getParameter("password");
+		//System.out.println(username + " pass:" + passAdmin);
 		//Query SQL
-		String sql = "SELECT Username, Pass FROM Admin WHERE Username='" +usernameAdmin+"' AND Pass='"+passAdmin+"'";
+		String sql = "SELECT Username, Pass, tipo FROM Utenti WHERE Username='" +username+"' AND Pass='"+pass+"'";
 		HttpSession session = request.getSession();
 		MyConnection conn = new MyConnection();
 		ResultSet rs = conn.getResult(sql);
@@ -37,15 +37,39 @@ public class LoginServlet extends HttpServlet {
 		
 		try {
 			if(rs.next()) { //Login eseguito
-				System.out.println("c'è un result set");
-				session.setAttribute("LoginDone", usernameAdmin);
-				System.out.println("Sessione LoginDone: "+session.getAttribute("LoginDone"));
-				request.getRequestDispatcher("Homepage.jsp").forward(request, response);
+				//System.out.println("c'ï¿½ un result set");
+				String tipo = rs.getString("tipo");
+				if(tipo == "lavoratore")
+				{
+					session.setAttribute("tipo", "lavoratore");
+					session.setAttribute("LoginDone", username);
+					//System.out.println("Sessione LoginDone: "+session.getAttribute("LoginDone"));
+					request.getRequestDispatcher("HomepageLavoratore.jsp").forward(request, response);
+					
+				}
+				else if(tipo == "azienda")
+				{
+					session.setAttribute("tipo", "azienda");
+					session.setAttribute("LoginDone", username);
+					//System.out.println("Sessione LoginDone: "+session.getAttribute("LoginDone"));
+					request.getRequestDispatcher("HomepageAzienda.jsp").forward(request, response);
+				}
+				else if(tipo == "amministratore")
+				{
+					session.setAttribute("tipo", "amministratore");
+					session.setAttribute("LoginDone", username);
+					//System.out.println("Sessione LoginDone: "+session.getAttribute("LoginDone"));
+					request.getRequestDispatcher("Homepage.jsp").forward(request, response);
+				}
+				else
+				{
+					//nessun tipo trovato
+				}
 			}
 			else {
-				System.out.println("non prende il resultSet");
+				//System.out.println("non prende il resultSet");
 				session.setAttribute("errorLogin", "si");
-				request.getRequestDispatcher("Login.jsp").forward(request, response);				
+				request.getRequestDispatcher("HomeLogin.jsp").forward(request, response);				
 			}
 		}
 		catch(SQLException e) {
