@@ -15,7 +15,7 @@
     <p>Registrazione</p>
     <!-- Sign In Form -->
     
-    <form name="inputCat" method="get">
+    <form name="inputHome" method="get">
 		<br><br>
 		<input type="button" value="Lavoratore" onclick="window.location.href='SigninLavoratore.jsp'">
 		<input type="button" value="Azienda" onclick="window.location.href='SigninAzienda.jsp'">

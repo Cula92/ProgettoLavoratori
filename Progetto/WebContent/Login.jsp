@@ -36,6 +36,10 @@
     <b style="color:red;"> Errore: credenziali errate</b>
     <br>
     </c:if>
+    <c:if test="${errorUtente eq 'si'}">
+    <b style="color:red;"> Errore: Utente disabilitato</b>
+    <br>
+    </c:if>
 	<form id="frmRegLog" name="frmRegLog" method="post" action="LoginServlet">					 		
       <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">

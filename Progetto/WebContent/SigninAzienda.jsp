@@ -13,8 +13,13 @@
 <!-- Sign In Form -->
     <p>Registrazione Lavoratore</p>
     
+    <c:if test="${errorPassword eq 'si'}">
+    <b style="color:red;"> Errore: Password diverse</b>
+    <br>
+    </c:if>
+    
   
-  	<form id="frmSignin" name="frmSignin" method="post" action="SigninServlet">            
+  	<form id="frmSignin" name="frmSignin" method="post" action="SigninAziendaServlet">            
       <p> Email  <input type="text" id="email" name="email" placeholder="Email"></p>
       <br>
       <p> Password  <input type="password1" id="password1" name="password1" placeholder="Password"></p>
